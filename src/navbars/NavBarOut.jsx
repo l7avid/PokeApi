@@ -22,7 +22,7 @@ const NavBarOut = () => {
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
-                                <img className="h-8 w-8" src="https://www.pngplay.com/wp-content/uploads/2/Pokeball-PNG-Pic-Background.png" alt="Workflow" />
+                                <img className="h-8 w-15" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Workflow" />
                             </div>
                         </div>
                         <div className="hidden md:block">

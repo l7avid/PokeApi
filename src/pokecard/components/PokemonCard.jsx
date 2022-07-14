@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import {Card, CardActionArea, CardContent, CardMedia, Grid, Paper} from '@mui/material'
+import {Card, CardActionArea, CardContent, CardMedia, Grid, Paper, Fab} from '@mui/material'
 import { Typography } from '@mui/material';
 import { useSelector } from 'react-redux'
 import { Box, Container } from '@mui/system';
 import SearchAppBar from '../../login/searchbar/SearchAppBar';
 import { fetchPokemon } from '../../actions/PokeActions';
 import { useNavigate } from 'react-router-dom';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const PokemonCard = () => {
 
@@ -48,7 +49,6 @@ const PokemonCard = () => {
 
   const seePokemon = async(pokeName) => {
     setIsSeeingAPokemon(true)
-    console.log("You've been clicked on ", pokeName);
     const pokeFound = await fetchPokemon(pokeName)
     if(pokeFound !== false){
       setPokemon([pokeFound])
@@ -59,7 +59,7 @@ const PokemonCard = () => {
     }
   }
 
-  const backToPokeList= (e) => {
+  const backToPokeList = (e) => {
     e.preventDefault()
     setIsSeeingAPokemon(false)
     return getAllPokemons()
@@ -72,7 +72,7 @@ const PokemonCard = () => {
         <>
           <header className="bg-white shadow">
             <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <img className="h-8 w-20" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Workflow" />
+            <img className="h-12 w-15" src="https://www.pngmart.com/files/2/Pokemon-PNG-File.png" alt="Workflow" />
             </div>
           </header>
           <main>
@@ -88,7 +88,7 @@ const PokemonCard = () => {
                       <CardContent>
                         <CardMedia style={{height: "40vh"}} image={poke.sprites.front_default}/>
                         <Box sx={{display: "flex", justifyContent: 'center', marginBottom: '2vh'}}>
-                        <Typography align='center' variant='button' style={{color: "#FFC300"}}>{poke.name}</Typography>
+                        <Typography fontWeight='bold' align='center' variant='button' style={{color: "#FFC300"}}>{poke.name}</Typography>
                         </Box>
                         <Box sx={{display: "flex", justifyContent: "space-between"}}>
                           {poke.types.map(eachType => <Typography key={index} align='left' variant='button' style={{color: "#B533FF"}}>{eachType.type.name}</Typography>)}
