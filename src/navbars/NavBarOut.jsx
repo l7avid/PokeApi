@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { logInInReducer } from '../login/slice/LoginSlice';
+import { Link } from 'react-router-dom';
 
 const NavBarOut = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const loggingIn = async (event) => {
         event.preventDefault();
+        navigate('/pokelist')
         dispatch(logInInReducer())
     }
 
@@ -74,7 +77,7 @@ const NavBarOut = () => {
                 <div className="md:hidden" id="mobile-menu">
                     <div className="pt-4 pb-3 border-t border-gray-700">
                         <div className="mt-3 px-2 space-y-1">
-                            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Log In</a>
+                            <Link to="/pokelist" className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Log In</Link>
                         </div>
                     </div>
                 </div>

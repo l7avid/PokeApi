@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import { Box, Container } from '@mui/system';
 import SearchAppBar from '../../login/searchbar/SearchAppBar';
 import { fetchPokemon } from '../../actions/PokeActions';
+import { useNavigate } from 'react-router-dom';
 
 const PokemonCard = () => {
 
@@ -13,11 +14,12 @@ const PokemonCard = () => {
 
   const [pokemon, setPokemon] = useState([]);
   const [isSeeingAPokemon, setIsSeeingAPokemon] = useState(false)
+  const navigate = useNavigate();
 
   const APIURL = "https://pokeapi.co/api/v2/pokemon?limit=50"
 
   useEffect(() => {
-    getAllPokemons();
+      getAllPokemons();
   }, [])
 
   const getAllPokemons = async () => {
