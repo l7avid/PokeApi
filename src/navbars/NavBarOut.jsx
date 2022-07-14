@@ -77,7 +77,7 @@ const NavBarOut = () => {
                 <div className="md:hidden" id="mobile-menu">
                     <div className="pt-4 pb-3 border-t border-gray-700">
                         <div className="mt-3 px-2 space-y-1">
-                            <Link to="/pokelist" className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Log In</Link>
+                        <button onClick={(event) => loggingIn(event)} style={{ color: "white" }} type="button" className="max-w-xs bg-gray-800 flex items-center text-sm focus:outline-none" id="Login" aria-expanded="false" aria-haspopup="true">Log In</button>
                         </div>
                     </div>
                 </div>
