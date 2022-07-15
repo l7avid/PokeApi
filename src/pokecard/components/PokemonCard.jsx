@@ -86,7 +86,7 @@ const PokemonCard = () => {
                   <Card onClick={() => seePokemon(poke.name)}>
                     <CardActionArea>
                       <CardContent>
-                        <CardMedia style={{height: "40vh"}} image={poke.sprites.front_default}/>
+                        <CardMedia style={{height: 350, width: "auto"}} image={poke.sprites.other['official-artwork'].front_default}/>
                         <Box sx={{display: "flex", justifyContent: 'center', marginBottom: '2vh'}}>
                         <Typography fontWeight='bold' align='center' variant='button' style={{color: "#FFC300"}}>{poke.name}</Typography>
                         </Box>
